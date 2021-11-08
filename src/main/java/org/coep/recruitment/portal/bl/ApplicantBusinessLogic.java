@@ -10,7 +10,6 @@ import org.coep.recruitment.portal.aspect.FileUploaderAspect;
 import org.coep.recruitment.portal.service.ApplicantService;
 import org.coep.recruitment.portal.shared.dto.ApplicantDto;
 import org.coep.recruitment.portal.shared.dto.ApplicantPersonalDetailsDto;
-import org.coep.recruitment.portal.shared.dto.FileUploadDataDto;
 import org.coep.recruitment.portal.ui.model.request.ApplicantPersonalDetailsRequestModel;
 import org.coep.recruitment.portal.ui.model.request.ApplicantSignUpRequestModel;
 import org.coep.recruitment.portal.ui.model.response.ApplicantEssentialDetailsResponseModel;
@@ -91,7 +90,7 @@ public class ApplicantBusinessLogic
 	public OperationStatusModel addApplicantPersonalDetails(String id,
 			ApplicantPersonalDetailsRequestModel applicantPersonalDetailsRequestModel)
 	{
-		OperationStatusModel returnValue = new OperationStatusModel();
+		OperationStatusModel returnValue;
 
 		ApplicantPersonalDetailsDto applicantPersonalDetailsDto = new ApplicantPersonalDetailsDto();
 		BeanUtils.copyProperties(applicantPersonalDetailsRequestModel, applicantPersonalDetailsDto);
@@ -103,14 +102,40 @@ public class ApplicantBusinessLogic
 
 	public OperationStatusModel uploadApplicantImage(String id, MultipartFile file)
 	{
+		OperationStatusModel returnValue;
+
+		String path = Constants.FILE_BASE_PATH + id + "/image";
+
 		try
 		{
-			FileUploadDataDto fileMetaData = FileUploaderAspect.fileUpload(file, Constants.FILE_BASE_PATH +  id + "/image");
+			FileUploaderAspect.fileUpload(file, path);
 		} catch (IOException e)
 		{
 			e.printStackTrace();
 		}
-		return null;
+
+		returnValue = applicantService.addApplicantImage(id, path);
+
+		return returnValue;
+	}
+
+	public OperationStatusModel uploadDateOfBirthProof(String id, MultipartFile file)
+	{
+		OperationStatusModel returnValue;
+
+		String path = Constants.FILE_BASE_PATH + id + "/dateOfBirthProof";
+
+		try
+		{
+			FileUploaderAspect.fileUpload(file, path);
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+
+		returnValue = applicantService.addApplicantDateOfBirthProof(id, path);
+
+		return returnValue;
 	}
 
 }

@@ -163,4 +163,48 @@ public class ApplicantServiceImpl implements ApplicantService
 		return returnValue;
 	}
 
+	@Override
+	public OperationStatusModel addApplicantImage(String id, String path)
+	{
+		OperationStatusModel returnValue = new OperationStatusModel();
+		returnValue.setOperationName(RequestOperationName.CREATE.name());
+		
+		ApplicantEntity applicantEntity = applicantRepository.findByApplicantId(id);
+
+		if (applicantEntity == null)
+		{
+			returnValue.setOperationResult(RequestOperationStatus.ERROR.name());
+			throw new UsernameNotFoundException(ErrorMessages.NO_RECORD_FOUND.getErrorMessage());
+		}
+		
+		applicantEntity.getApplicantPersonalDetails().setApplicantImageFile(path);
+		applicantRepository.save(applicantEntity);
+		
+		returnValue.setOperationResult(RequestOperationStatus.SUCCESS.name());
+		
+		return returnValue;
+	}
+
+	@Override
+	public OperationStatusModel addApplicantDateOfBirthProof(String id, String path)
+	{
+		OperationStatusModel returnValue = new OperationStatusModel();
+		returnValue.setOperationName(RequestOperationName.CREATE.name());
+		
+		ApplicantEntity applicantEntity = applicantRepository.findByApplicantId(id);
+
+		if (applicantEntity == null)
+		{
+			returnValue.setOperationResult(RequestOperationStatus.ERROR.name());
+			throw new UsernameNotFoundException(ErrorMessages.NO_RECORD_FOUND.getErrorMessage());
+		}
+		
+		applicantEntity.getApplicantPersonalDetails().setDateOfBirthProof(path);
+		applicantRepository.save(applicantEntity);
+		
+		returnValue.setOperationResult(RequestOperationStatus.SUCCESS.name());
+		
+		return returnValue;
+	}
+
 }

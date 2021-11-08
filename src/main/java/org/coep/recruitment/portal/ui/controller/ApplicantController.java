@@ -49,13 +49,17 @@ public class ApplicantController
 	{
 		return applicantBusinessLogic.addApplicantPersonalDetails(id, applicantPersonalDetailsRequestModel);
 	}
-	
-	@PostMapping(path = "/upload/applicantImage/{id}", consumes = { MediaType.APPLICATION_JSON_VALUE,
-			MediaType.APPLICATION_XML_VALUE }, produces =
-			{ MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+
+	@PostMapping(path = "/upload/applicantImage/{id}")
 	public OperationStatusModel uploadApplicantImage(@PathVariable String id, @RequestPart("file") MultipartFile file)
 	{
 		return applicantBusinessLogic.uploadApplicantImage(id, file);
+	}
+
+	@PostMapping(path = "/upload/dateofBirthProof/{id}")
+	public OperationStatusModel uploadDateofBirthProof(@PathVariable String id, @RequestPart("file") MultipartFile file)
+	{
+		return applicantBusinessLogic.uploadDateOfBirthProof(id, file);
 	}
 
 }

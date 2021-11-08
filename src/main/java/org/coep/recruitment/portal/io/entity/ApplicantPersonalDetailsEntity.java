@@ -43,9 +43,11 @@ public class ApplicantPersonalDetailsEntity implements Serializable
 	private String            currentAddressLine3;
 	@Column(name = "applicant_image_file")
 	private String            applicantImageFile;
+	@Column(name = "date_of_birth_proof")
+	private String            dateOfBirthProof;
 	@OneToOne
 	@JoinColumn(name = "applicant_id")
-	private ApplicantEntity     applicant;
+	private ApplicantEntity   applicant;
 
 	public ApplicantPersonalDetailsEntity()
 	{
@@ -53,10 +55,10 @@ public class ApplicantPersonalDetailsEntity implements Serializable
 	}
 
 	public ApplicantPersonalDetailsEntity(Long applicantPersonalDetailsId, String firstName, String middleName,
-			String lastName, Boolean gender, Boolean maritalStatus,
-			Timestamp dateofBirth, String permanentAddressLine1, String permanentAddressLine2,
-			String permanentAddressLine3, String currentAddressLine1, String currentAddressLine2,
-			String currentAddressLine3, String applicantImageFile, ApplicantEntity applicant)
+			String lastName, Boolean gender, Boolean maritalStatus, Timestamp dateofBirth, String permanentAddressLine1,
+			String permanentAddressLine2, String permanentAddressLine3, String currentAddressLine1,
+			String currentAddressLine2, String currentAddressLine3, String applicantImageFile, String dateOfBirthProof,
+			ApplicantEntity applicant)
 	{
 		super();
 		this.applicantPersonalDetailsId = applicantPersonalDetailsId;
@@ -73,9 +75,9 @@ public class ApplicantPersonalDetailsEntity implements Serializable
 		this.currentAddressLine2 = currentAddressLine2;
 		this.currentAddressLine3 = currentAddressLine3;
 		this.applicantImageFile = applicantImageFile;
+		this.dateOfBirthProof = dateOfBirthProof;
 		this.applicant = applicant;
 	}
-
 
 	public Long getApplicantPersonalDetailsId()
 	{
@@ -215,6 +217,16 @@ public class ApplicantPersonalDetailsEntity implements Serializable
 	public void setApplicantImageFile(String applicantImageFile)
 	{
 		this.applicantImageFile = applicantImageFile;
+	}
+
+	public String getDateOfBirthProof()
+	{
+		return dateOfBirthProof;
+	}
+
+	public void setDateOfBirthProof(String dateOfBirthProof)
+	{
+		this.dateOfBirthProof = dateOfBirthProof;
 	}
 
 	public ApplicantEntity getApplicant()

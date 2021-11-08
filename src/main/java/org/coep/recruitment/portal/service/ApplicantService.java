@@ -17,4 +17,8 @@ public interface ApplicantService extends UserDetailsService
 	OperationStatusModel addApplicantPersonalDetails(String id,
 			ApplicantPersonalDetailsDto applicantPersonalDetailsDto);
 
+	OperationStatusModel addApplicantImage(String id, String path);
+
+	OperationStatusModel addApplicantDateOfBirthProof(String id, String path);
+
 }

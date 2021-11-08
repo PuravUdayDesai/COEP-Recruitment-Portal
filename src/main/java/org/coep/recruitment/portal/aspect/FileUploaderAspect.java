@@ -28,7 +28,7 @@ public class FileUploaderAspect
 		{
 			throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
 		}
-		String path = "E:\\" + FileUploaderAspect.replaceColonToPeriod(filePath);
+		String path = filePath;
 		File   f    = new File(path);
 		if (!f.exists())
 		{
@@ -38,7 +38,7 @@ public class FileUploaderAspect
 				throw new IOException("Cannot Create Director Specified: " + path);
 			}
 		}
-		String            qualifiedPath  = path + "\\" + fileName;
+		String            qualifiedPath  = path + "/" + fileName;
 		Path              targetLocation = Paths.get(qualifiedPath);
 		FileUploadDataDto fud            = new FileUploadDataDto(qualifiedPath, file.getSize(), file.getContentType());
 		Files.copy(file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
