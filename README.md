@@ -56,6 +56,13 @@ COEP Recruitment Portal
 ```
 ```xml
 <dependency>
+	<groupId>org.modelmapper</groupId>
+	<artifactId>modelmapper</artifactId>
+	<version>2.4.2</version>
+</dependency>
+```
+```xml
+<dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-tomcat</artifactId>
 	<scope>provided</scope>
