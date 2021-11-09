@@ -1,0 +1,151 @@
+#for_col {
+  height: 23cm;
+  border-top-color: black;
+  border-top-width: thin;
+  border-style: solid;
+}
+
+#c1 {
+  background-color: rgb(248, 226, 231);
+}
+#c2 {
+  background-color: white;
+  width: 30cm;
+}
+
+#pd_cont {
+  width: 99.2%;
+}
+
+.nav-link {
+  font-family: sans-serif;
+  font-size: 30px;
+  color: rgb(224, 5, 97);
+}
+
+.nav,
+.flex-column {
+  align-content: center;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.nav-item {
+  padding: 5%;
+}
+
+#inCol1 {
+  padding-top: 3%;
+  padding-right: 6%;
+  background-color: white;
+}
+
+#inCol2 {
+  background-color: rgb(212, 212, 212);
+  margin-top: 3%;
+  background-image: url("../images//prof.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#for_inCol2 {
+  align-content: flex-start;
+  padding-right: 7%;
+}
+
+#row2,
+#row3,
+#row4 {
+  margin-top: 3%;
+}
+
+#first_Name,
+#last_Name,
+#middle_Name,
+#pd_Contact {
+  width: 9cm;
+}
+
+#select_Gender {
+  width: 9cm;
+  margin-left: 14%;
+  height: 1.5cm;
+}
+
+#marital_Status {
+  width: 9cm;
+  margin-left: 14%;
+  height: 1.5cm;
+}
+
+#pd_Email {
+  width: 540%;
+  margin-left: 31%;
+}
+
+#BirthDate {
+  width: 9cm;
+}
+
+#fileLabel {
+  height: 1.5cm;
+  margin-left: 15%;
+  width: 19cm;
+}
+
+#fileLabel::after {
+  height: 1.4cm;
+}
+
+#cur_Add1,
+#cur_Add2,
+#cur_Add3 {
+  width: 17cm;
+  margin-top: 5%;
+  margin-left: 12%;
+}
+
+#per_Add1,
+#per_Add2,
+#per_Add3 {
+  width: 17cm;
+  margin-top: 5%;
+  margin-left: 10%;
+  border-style: solid;
+}
+
+#flexCheckDefault {
+  margin-top: 5%;
+  transform: scale(1.5);
+  margin-left: 11%;
+}
+
+#checkbox_Label {
+  font-family: sans-serif;
+  margin-left: 2%;
+}
+
+#btn_Personal_Details {
+  width: 20%;
+  background-color: rgb(224, 5, 97);
+  border-color: rgb(224, 5, 97);
+  font-family: sans-serif;
+  transition: background-color 180ms ease-in;
+  height: 1.5cm;
+  margin-top: 3%;
+  margin-left: 40%;
+}
+
+#btn_Personal_Details {
+  background-color: rgb(224, 5, 97);
+  border-color: rgb(224, 5, 97);
+}
+
+#for_inCol3 {
+  align-content: center;
+}
+
+#profileimg {
+  margin-top: 12%;
+  margin-bottom: 7%;
+}

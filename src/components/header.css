@@ -1,0 +1,19 @@
+.navbar-custom {
+  background-color: white;
+}
+
+#nav_login {
+  width: 150%;
+  margin-left: 1150%;
+  background-color: rgb(224, 5, 97);
+  border-color: rgb(224, 5, 97);
+  font-family: sans-serif;
+  transition: background-color 180ms ease-in;
+  height: 1.6cm;
+}
+
+#nav_reg {
+  width: 150%;
+  margin-left: 850%;
+  height: 1.6cm;
+}
