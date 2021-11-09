@@ -1,0 +1,29 @@
+<html>
+<body>
+<h1>Hello Here!</h1>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	var settings = {
+		"async": true,
+		"crossDomain": true,
+		"url": "http://localhost:8080/applicant",
+		"method": "POST",
+		"timeout": 0,
+		"headers": {
+			"Content-Type": "application/json",
+			"Accept": "application/json"
+		},
+		"data": JSON.stringify({
+    		"emailId": "purav@gmail.com",
+    		"contactNumber": "7314036480"
+		}),
+		"processData": false
+	};
+
+	$.ajax(settings).done(function (response) {
+		console.log(response);
+	});
+</script>
+
+</html>
